@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Настройки профиля — AskSpace</title>
+  <link rel="icon" href="static/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+  <script defer src="static/js/bootstrap.bundle.min.js">
+</script>
+  <script defer src="static/js/app.js">
+</script>
+</head>
+<body class="d-flex flex-column">
+  <header class="bg-light border-bottom">
+      <nav class="navbar container d-flex flex-wrap align-items-center gap-3 py-3" aria-label="Главное меню">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
+<img src="static/img/logo.svg" width="32" height="32" alt="">AskSpace</a>
+        <form class="search-form d-flex gap-2 flex-grow-1" action="index.html" role="search">
+          <label class="visually-hidden" for="search">Поиск вопросов</label>
+          <input class="form-control" id="search" name="q" type="search" placeholder="Поиск вопросов" maxlength="100">
+          <button class="btn btn-outline-secondary" type="submit">Найти</button>
+        </form>
+        <a class="btn btn-primary ms-auto" href="ask.html">Задать вопрос</a>
+        <div class="d-flex align-items-center gap-2">
+<img src="static/img/avatar-1.svg" class="avatar-small rounded" alt="Аватар пользователя">
+<div>
+<div>alex</div>
+<a class="small" href="profile.html">Настройки</a> <a class="small" href="login.html">Выйти</a>
+</div>
+</div>
+      </nav>
+    </header>
+  <main class="container my-4 flex-grow-1">
+    <div class="row g-4">
+      <section class="col-lg-9" aria-labelledby="page-title">
+        <div class="form-page">
+<h1 class="h2 mb-4" id="page-title">Настройки профиля</h1>
+<form class="demo-form" novalidate>
+<div class="alert alert-danger" role="status" data-form-message hidden>
+</div>
+<div class="mb-3">
+<img src="static/img/avatar-1.svg" class="avatar rounded" alt="Аватар пользователя">
+<p class="form-text">Текущий аватар</p>
+</div>
+<div class="mb-3">
+      <label class="form-label" for="username">Логин</label>
+      <input type="text" id="username" name="username" class="form-control" maxlength="30" required minlength="3" autocomplete="username" aria-describedby="username-error username-help" value="alex">
+      <div class="invalid-feedback" id="username-error">Введите логин длиной от 3 до 30 символов.</div>
+      <div class="form-text" id="username-help">От 3 до 30 символов.</div>
+    </div>
+<div class="mb-3">
+      <label class="form-label" for="email">Email</label>
+      <input type="email" id="email" name="email" class="form-control" maxlength="254" required autocomplete="email" aria-describedby="email-error email-help" value="alex@example.com">
+      <div class="invalid-feedback" id="email-error">Введите корректный email.</div>
+      <div class="form-text" id="email-help">Используется для входа в аккаунт.</div>
+    </div>
+<div class="mb-3">
+      <label class="form-label" for="nickname">Отображаемое имя</label>
+      <input type="text" id="nickname" name="nickname" class="form-control" maxlength="50" required autocomplete="nickname" aria-describedby="nickname-error nickname-help" value="Алексей">
+      <div class="invalid-feedback" id="nickname-error">Укажите отображаемое имя.</div>
+      <div class="form-text" id="nickname-help">Не более 50 символов.</div>
+    </div>
+<div class="mb-3">
+<label class="form-label" for="avatar">Изменить аватар</label>
+<input class="form-control" id="avatar" name="avatar" type="file" accept="image/png,image/jpeg" aria-describedby="avatar-help">
+<div class="form-text" id="avatar-help">Выберите JPG или PNG. Если оставить поле пустым, аватар не изменится.</div>
+</div>
+<button class="btn btn-primary" type="submit">Сохранить</button>
+</form>
+</div>
+      </section>
+      <aside class="col-lg-3" aria-label="Боковая колонка">
+      <section class="mb-4">
+<h2 class="h4">Популярные теги</h2>
+<div class="d-flex flex-wrap gap-2">
+<a class="badge text-bg-secondary text-decoration-none" href="index.html?tag=python">python</a> <a class="badge text-bg-secondary text-decoration-none" href="index.html?tag=django">django</a> <a class="badge text-bg-secondary text-decoration-none" href="index.html?tag=javascript">javascript</a> <a class="badge text-bg-secondary text-decoration-none" href="index.html?tag=html">html</a> <a class="badge text-bg-secondary text-decoration-none" href="index.html?tag=css">css</a> <a class="badge text-bg-secondary text-decoration-none" href="index.html?tag=git">git</a>
+</div>
+</section>
+      <section>
+<h2 class="h4">Лучшие участники</h2>
+<ul class="list-unstyled mb-0">
+        <li class="mb-2">Алексей — 120 баллов</li>
+        <li class="mb-2">Мария — 95 баллов</li>
+        <li class="mb-2">Иван — 80 баллов</li>
+      </ul>
+</section>
+    </aside>
+    </div>
+  </main>
+  <footer class="bg-light border-top mt-auto">
+    <div class="container py-3 small text-secondary">© 2026 AskSpace. Учебный проект.</div>
+  </footer>
+</body>
+</html>

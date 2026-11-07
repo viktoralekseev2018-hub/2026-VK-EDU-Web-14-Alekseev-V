@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Новый вопрос — AskSpace</title>
+  <link rel="icon" href="static/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+  <script defer src="static/js/bootstrap.bundle.min.js">
+</script>
+  <script defer src="static/js/app.js">
+</script>
+</head>
+<body class="d-flex flex-column">
+  <header class="bg-light border-bottom">
+      <nav class="navbar container d-flex flex-wrap align-items-center gap-3 py-3" aria-label="Главное меню">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
+<img src="static/img/logo.svg" width="32" height="32" alt="">AskSpace</a>
+        <form class="search-form d-flex gap-2 flex-grow-1" action="index.html" role="search">
+          <label class="visually-hidden" for="search">Поиск вопросов</label>
+          <input class="form-control" id="search" name="q" type="search" placeholder="Поиск вопросов" maxlength="100">
+          <button class="btn btn-outline-secondary" type="submit">Найти</button>
+        </form>
+        <a class="btn btn-primary ms-auto" href="ask.html">Задать вопрос</a>
+        <div class="d-flex gap-3">
+<a href="login.html">Войти</a>
+<a href="signup.html">Регистрация</a>
+</div>
+      </nav>
+    </header>
+  <main class="container my-4 flex-grow-1">
+    <div class="row g-4">
+      <section class="col-lg-9" aria-labelledby="page-title">
+        <div class="form-page">
+<h1 class="h2 mb-4" id="page-title">Новый вопрос</h1>
+<form class="demo-form" novalidate>
+<div class="alert alert-danger" role="status" data-form-message hidden>
+</div>
+<div class="mb-3">
+      <label class="form-label" for="title">Заголовок</label>
+      <input type="text" id="title" name="title" class="form-control" maxlength="150" required minlength="10" placeholder="Кратко сформулируйте вопрос" aria-describedby="title-error title-help" value="">
+      <div class="invalid-feedback" id="title-error">Введите заголовок длиной от 10 до 150 символов.</div>
+      <div class="form-text" id="title-help">От 10 до 150 символов.</div>
+    </div>
+<div class="mb-3">
+      <label class="form-label" for="text">Текст вопроса</label>
+      <textarea id="text" name="text" class="form-control" maxlength="5000" required minlength="20" placeholder="Опишите проблему и то, что вы уже пробовали" aria-describedby="text-error text-help" rows="6">
+</textarea>
+      <div class="invalid-feedback" id="text-error">Текст вопроса должен содержать не менее 20 символов.</div>
+      <div class="form-text" id="text-help">От 20 до 5 000 символов. Добавьте примеры или текст ошибки.</div>
+    </div>
+<div class="mb-3">
+      <label class="form-label" for="tags">Теги</label>
+      <input type="text" id="tags" name="tags" class="form-control" maxlength="80" required placeholder="python, django" aria-describedby="tags-error tags-help" value="">
+      <div class="invalid-feedback" id="tags-error">Укажите теги вопроса.</div>
+      <div class="form-text" id="tags-help">Перечислите теги через запятую. Не более 80 символов.</div>
+    </div>
+<button class="btn btn-primary" type="submit">Задать вопрос</button>
+</form>
+</div>
+      </section>
+      <aside class="col-lg-3" aria-label="Боковая колонка">
+      <section class="mb-4">
+<h2 class="h4">Популярные теги</h2>
+<div class="d-flex flex-wrap gap-2">
+<a class="badge text-bg-secondary text-decoration-none" href="index.html?tag=python">python</a> <a class="badge text-bg-secondary text-decoration-none" href="index.html?tag=django">django</a> <a class="badge text-bg-secondary text-decoration-none" href="index.html?tag=javascript">javascript</a> <a class="badge text-bg-secondary text-decoration-none" href="index.html?tag=html">html</a> <a class="badge text-bg-secondary text-decoration-none" href="index.html?tag=css">css</a> <a class="badge text-bg-secondary text-decoration-none" href="index.html?tag=git">git</a>
+</div>
+</section>
+      <section>
+<h2 class="h4">Лучшие участники</h2>
+<ul class="list-unstyled mb-0">
+        <li class="mb-2">Алексей — 120 баллов</li>
+        <li class="mb-2">Мария — 95 баллов</li>
+        <li class="mb-2">Иван — 80 баллов</li>
+      </ul>
+</section>
+    </aside>
+    </div>
+  </main>
+  <footer class="bg-light border-top mt-auto">
+    <div class="container py-3 small text-secondary">© 2026 AskSpace. Учебный проект.</div>
+  </footer>
+</body>
+</html>
