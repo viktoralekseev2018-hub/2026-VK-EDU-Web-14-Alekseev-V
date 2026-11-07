@@ -1,0 +1,8 @@
+{% extends 'core/base.html' %}
+{% block title %}Новый вопрос{% endblock %}
+{% block content %}
+  <div class="form-page">
+    <h1 class="h2 mb-4" id="page-title">Новый вопрос</h1>
+    {% include 'core/includes/form.html' with submit_label='Задать вопрос' %}
+  </div>
+{% endblock %}

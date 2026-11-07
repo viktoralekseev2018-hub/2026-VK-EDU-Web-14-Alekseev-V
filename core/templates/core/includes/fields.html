@@ -1,0 +1,10 @@
+{% for field in form %}
+  <div class="mb-3">
+    <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} *{% endif %}</label>
+    {{ field }}
+    <div id="{{ field.id_for_label }}_errors"{% if field.errors %} class="invalid-feedback d-block"{% endif %}>
+      {% for error in field.errors %}<div>{{ error }}</div>{% endfor %}
+    </div>
+    <div class="form-text" id="{{ field.id_for_label }}_help">{{ field.help_text }}</div>
+  </div>
+{% endfor %}

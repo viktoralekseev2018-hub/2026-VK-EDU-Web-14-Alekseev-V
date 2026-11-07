@@ -1,0 +1,14 @@
+{% if demo_message %}
+  <div class="alert alert-info" role="status">{{ demo_message }}</div>
+{% endif %}
+{% if form.errors %}
+  <div class="alert alert-danger" role="alert">
+    Проверьте правильность заполнения полей.
+    {% for error in form.non_field_errors %}<div>{{ error }}</div>{% endfor %}
+  </div>
+{% endif %}
+<form action="{{ form_action }}" method="post"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %} novalidate>
+  {% csrf_token %}
+  {% include 'core/includes/fields.html' %}
+  <button class="btn btn-primary" type="submit">{{ submit_label }}</button>
+</form>

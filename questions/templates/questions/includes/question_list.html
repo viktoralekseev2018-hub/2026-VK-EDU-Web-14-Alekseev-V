@@ -1,0 +1,11 @@
+<nav class="nav nav-pills gap-2 mb-3" aria-label="Списки вопросов">
+  <a class="nav-link{% if list_mode == 'new' %} active{% endif %}" href="{% url 'questions:index' %}"{% if list_mode == 'new' %} aria-current="page"{% endif %}>Новые</a>
+  <a class="nav-link{% if list_mode == 'hot' %} active{% endif %}" href="{% url 'questions:hot' %}"{% if list_mode == 'hot' %} aria-current="page"{% endif %}>Популярные</a>
+</nav>
+{% if search_query %}<p>Поиск: «{{ search_query }}»</p>{% endif %}
+{% for question in page_obj %}
+  {% include 'questions/includes/question_card.html' %}
+{% empty %}
+  <div class="alert alert-secondary">Вопросов не найдено. <a href="{% url 'questions:index' %}">Все вопросы</a></div>
+{% endfor %}
+{% include 'core/includes/pagination.html' with pagination_label='вопросов' %}

@@ -1,0 +1,29 @@
+{% load static %}
+<header class="bg-light border-bottom">
+  <nav class="navbar container d-flex flex-wrap align-items-center gap-3 py-3 px-3" aria-label="Главное меню">
+    <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="{% url 'questions:index' %}">
+      <img src="{% static 'core/img/logo.svg' %}" width="32" height="32" alt="">AskSpace
+    </a>
+    <form class="search-form d-flex gap-2 flex-grow-1" action="{% url 'questions:index' %}" method="get" role="search">
+      <label class="visually-hidden" for="search">Поиск вопросов</label>
+      <input class="form-control" id="search" name="q" type="search" placeholder="Поиск вопросов" maxlength="100" value="{{ search_query|default:'' }}">
+      <button class="btn btn-outline-secondary" type="submit">Найти</button>
+    </form>
+    <a class="btn btn-primary ms-auto" href="{% url 'questions:ask' %}">Задать вопрос</a>
+    {% if demo_profile %}
+      <div class="d-flex align-items-center gap-2">
+        <img class="avatar-small rounded" src="{% static demo_user.avatar %}" alt="Ваш аватар">
+        <div>
+          <div>{{ demo_user.username }}</div>
+          <a class="small" href="{% url 'core:profile' %}">Настройки</a>
+          <a class="small" href="{% url 'core:login' %}">Выйти</a>
+        </div>
+      </div>
+    {% else %}
+      <div class="d-flex gap-3">
+        <a href="{% url 'core:login' %}">Войти</a>
+        <a href="{% url 'core:signup' %}">Регистрация</a>
+      </div>
+    {% endif %}
+  </nav>
+</header>

@@ -1,0 +1,26 @@
+{% if page_obj.paginator.num_pages > 1 %}
+  <nav aria-label="Страницы {{ pagination_label|default:'списка' }}">
+    <ul class="pagination flex-wrap">
+      {% if page_obj.has_previous %}
+        <li class="page-item"><a class="page-link" href="{% querystring page=page_obj.previous_page_number %}{{ anchor|default:'' }}" aria-label="Предыдущая страница">«</a></li>
+      {% else %}
+        <li class="page-item disabled"><span class="page-link" aria-disabled="true">«</span></li>
+      {% endif %}
+      {% for number in page_obj.pagination_range %}
+        {% if number == page_obj.paginator.ELLIPSIS %}
+          <li class="page-item disabled"><span class="page-link">{{ number }}</span></li>
+        {% elif number == page_obj.number %}
+          <li class="page-item active"><span class="page-link" aria-current="page">{{ number }}</span></li>
+        {% else %}
+          <li class="page-item"><a class="page-link" href="{% querystring page=number %}{{ anchor|default:'' }}" aria-label="Страница {{ number }}">{{ number }}</a></li>
+        {% endif %}
+      {% endfor %}
+      {% if page_obj.has_next %}
+        <li class="page-item"><a class="page-link" href="{% querystring page=page_obj.next_page_number %}{{ anchor|default:'' }}" aria-label="Следующая страница">»</a></li>
+      {% else %}
+        <li class="page-item disabled"><span class="page-link" aria-disabled="true">»</span></li>
+      {% endif %}
+    </ul>
+  </nav>
+{% endif %}
+<p class="small text-secondary">Показано {{ page_obj.start_index }}–{{ page_obj.end_index }} из {{ page_obj.paginator.count }}. Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.</p>

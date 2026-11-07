@@ -1,0 +1,9 @@
+{% extends 'core/base.html' %}
+{% block title %}Регистрация{% endblock %}
+{% block content %}
+  <div class="form-page">
+    <h1 class="h2 mb-4" id="page-title">Регистрация</h1>
+    {% include 'core/includes/form.html' with submit_label='Зарегистрироваться' %}
+    <p class="mt-3">Уже есть аккаунт? <a href="{% url 'core:login' %}">Войти</a></p>
+  </div>
+{% endblock %}

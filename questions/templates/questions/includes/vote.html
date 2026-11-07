@@ -1,0 +1,5 @@
+<div class="vote-widget d-grid gap-1 mt-2" data-vote="{{ item.vote_state }}" role="group" aria-label="Оценка публикации">
+  <button class="btn btn-sm btn-outline-primary{% if item.vote_state == 1 %} active{% endif %}" type="button" data-vote="1" aria-label="Лайк" aria-pressed="{% if item.vote_state == 1 %}true{% else %}false{% endif %}">▲</button>
+  <span class="border rounded text-center py-1" data-counter aria-live="polite">{{ item.rating }}</span>
+  <button class="btn btn-sm btn-outline-danger{% if item.vote_state == -1 %} active{% endif %}" type="button" data-vote="-1" aria-label="Дизлайк" aria-pressed="{% if item.vote_state == -1 %}true{% else %}false{% endif %}">▼</button>
+</div>
