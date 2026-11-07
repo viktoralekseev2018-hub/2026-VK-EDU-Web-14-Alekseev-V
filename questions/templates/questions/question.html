@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+{% block title %}{{ question.title }}{% endblock %}
+{% block content %}
+  {% include 'questions/includes/question_card.html' with detail=True %}
+  <section class="mt-4" id="answers" aria-labelledby="answers-title">
+    <h2 class="h4 mb-3" id="answers-title">Ответы ({{ question.answers_count }})</h2>
+    {% for answer in page_obj %}
+      {% include 'questions/includes/answer_card.html' %}
+    {% empty %}
+      <p>Ответов пока нет.</p>
+    {% endfor %}
+    {% include 'core/includes/pagination.html' with pagination_label='ответов' anchor='#answers' %}
+  </section>
+  <section class="form-page mt-4" aria-labelledby="answer-form-title">
+    <h2 class="h4 mb-3" id="answer-form-title">Ваш ответ</h2>
+    {% include 'core/includes/form.html' with submit_label='Ответить' %}
+  </section>
+{% endblock %}

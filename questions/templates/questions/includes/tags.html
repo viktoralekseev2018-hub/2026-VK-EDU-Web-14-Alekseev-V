@@ -1,0 +1,3 @@
+{% for tag in tags %}
+  <a class="badge text-bg-secondary text-decoration-none" href="{% url 'questions:tag' tag %}">{{ tag }}</a>
+{% endfor %}

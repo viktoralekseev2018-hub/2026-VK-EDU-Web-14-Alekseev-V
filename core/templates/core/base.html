@@ -1,0 +1,26 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}AskSpace{% endblock %} — AskSpace</title>
+  <link rel="icon" href="{% static 'core/img/favicon.svg' %}" type="image/svg+xml">
+  <link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+  <script defer src="{% static 'core/js/bootstrap.bundle.min.js' %}"></script>
+  <script defer src="{% static 'questions/js/questions.js' %}"></script>
+</head>
+<body class="d-flex flex-column">
+  {% include 'core/includes/header.html' %}
+  <main class="container my-4 flex-grow-1">
+    <div class="row g-4">
+      <section class="col-lg-9" aria-labelledby="page-title">
+        {% block content %}{% endblock %}
+      </section>
+      {% include 'core/includes/sidebar.html' %}
+    </div>
+  </main>
+  {% include 'core/includes/footer.html' %}
+</body>
+</html>
