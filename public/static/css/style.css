@@ -1,0 +1,52 @@
+/* Сетка, кнопки, карточки и формы оформлены классами Bootstrap. */
+body {
+  min-height: 100vh;
+}
+
+.search-form {
+  min-width: 0;
+}
+
+.question-user {
+  width: 72px;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+}
+
+.avatar-small {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+}
+
+.question-content {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.form-page {
+  max-width: 640px;
+}
+
+@media (max-width: 991.98px) {
+  .search-form {
+    flex-basis: 100%;
+    order: 3;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .question-user {
+    width: 50px;
+  }
+
+  .avatar {
+    width: 48px;
+    height: 48px;
+  }
+}
